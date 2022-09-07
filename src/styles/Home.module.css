@@ -1,0 +1,58 @@
+.mainContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+}
+
+.btnSAddOrDelet {
+    color: var(--blue);
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 1s;
+}
+
+@media(min-width: 584px){
+    .mainContainer{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btnSAddOrDelet{
+        background-color: var(--blue);
+        color: #fff;
+        width: 30%;
+        border-radius: 10px;
+        font-size: 1rem;
+
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media(min-width: 1007px){
+    .mainContainer{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 2rem;
+
+        margin-top: 2rem;
+    }
+
+    .btnSAddOrDelet{
+        width: 30%;
+        font-size: 1.5rem;
+
+        border-radius: 20px;
+    }
+
+    .btnSAddOrDelet:hover {
+        background-color: #234eaa;
+    }
+}

@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, button, input, textarea{
+  font-family: 'Poppins', sans-serif;
+  font-style: 400;
+  font-size: 1rem;
+}
+
+:root{
+  --gray-basic-900: #4E4E4E;
+  --gray-basic-light: #f1f1f1;
+  --blue: #3974f1;
+  --border-gray: #c3c4c3;
+}
+
+@media (max-width: 1080px){
+  html{
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px){
+  html{
+    font-size: 87.5%;
+  }
+}

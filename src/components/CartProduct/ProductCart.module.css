@@ -1,0 +1,135 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray-basic-light);
+    border-radius: 10px;
+
+    flex-wrap: wrap;
+}
+
+.productContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.imgThumb {
+    border-radius: 5px;
+}
+
+.infoContainer {}
+
+.productTitle {
+    font-size: 1rem;
+}
+
+.price {
+    font-weight: 300;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.productQuantity {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.btnSAddOrDelet {
+    color: var(--blue);
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+}
+
+@media(min-width: 584px) {
+    .container {
+        flex-direction: column;
+    }
+
+
+    .productContainer {
+        flex-direction: column;
+    }
+
+    .infoContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .imgThumb{
+        width: 100px;
+    }
+
+    .productTitle{
+        font-size: 1.2rem;
+    }
+
+    .price{
+        font-size: 1.2rem;
+    }
+
+    .btnSAddOrDelet{
+        background-color: var(--blue);
+        color: #fff;
+        width: 30%;
+        border-radius: 10px;
+        font-size: 1rem;
+
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media(min-width: 1007px) {
+    .container {
+        flex-direction: column;
+    }
+
+
+    .productContainer {
+        flex-direction: column;
+    }
+
+    .infoContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .imgThumb{
+        width: 10rem;
+    }
+
+    .productTitle{
+        font-size: 1.7rem;
+        max-width: 90%;
+        text-align: center;
+        line-height: 2rem;
+    }
+
+    .price{
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+
+    .btnSAddOrDelet{
+        width: 30%;
+        font-size: 1.5rem;
+
+        border-radius: 20px;
+    }
+
+}
