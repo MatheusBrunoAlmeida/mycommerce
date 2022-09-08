@@ -7,25 +7,29 @@ import { useCallback, useEffect, useState } from 'react'
 import { api } from '../api/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/modules/cart/actions'
-import { IProduct } from '../store/modules/cart/types'
+import { ICartItem, IProduct } from '../store/modules/cart/types'
+import { IState } from '../store'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   const [products, setProducts] = useState<IProduct[]>([])
   const dispatch = useDispatch()
 
-  const catalog = useSelector(state => state);
+  const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
 
   useEffect(() => {
     api.get('/products').then(response => {
       setProducts(response.data)
     })
-  },[])
+  }, [])
+
+  // const cartQuantity = cart.length
 
 
 
-  const handleAddProductToCart = useCallback((product: IProduct) =>{
+  const handleAddProductToCart = useCallback((product: IProduct) => {
     dispatch(addProductToCart(product))
-  },[dispatch])
+  }, [dispatch])
 
   return (
     <>
@@ -44,7 +48,7 @@ const Home: NextPage = () => {
             >
               <button
                 className={styles.btnSAddOrDelet}
-                onClick={()=>handleAddProductToCart(product)}
+                onClick={() => handleAddProductToCart(product)}
               >
                 +
               </button>
@@ -52,6 +56,14 @@ const Home: NextPage = () => {
           )
         })}
       </div>
+
+      {cart.length > 0 ? (
+        <footer className={styles.footer}>
+          <Link href="cart-page">
+            <button className={styles.btnSeeCart}>Ver carrinho</button>
+          </Link>
+        </footer>
+      ) : ('')}
     </>
   )
 }

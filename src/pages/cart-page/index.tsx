@@ -46,6 +46,10 @@ export default function CartPage() {
                     >
                     </ProductCard>
                 ))}
+
+                {cart.length == 0 ? (
+                    <h1 className={styles.cartEmpty}>Seu carrinho está vazio</h1>
+                ) : ('')}
             </div>
 
 

@@ -15,6 +15,7 @@ interface HeaderProps {
 export function Header({ title, quantity }: HeaderProps) {
     const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
     quantity = cart.length
+    
     return (
         <>
             <div className={styles.container} >

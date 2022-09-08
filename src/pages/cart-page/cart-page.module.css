@@ -75,6 +75,13 @@
     font-size: 1rem;
 }
 
+
+.cartEmpty{
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--gray-border);
+}
+
 @media(min-width: 584px){
     .mainContainer{
         flex-direction: row;

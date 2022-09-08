@@ -1,4 +1,4 @@
-.mainContainer{
+.mainContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -15,14 +15,36 @@
     transition: 1s;
 }
 
-@media(min-width: 584px){
-    .mainContainer{
+.footer {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 1rem;
+}
+
+.btnSeeCart {
+    background-color: var(--blue);
+    color: #fff;
+    width: 90%;
+    border: none;
+
+    font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+@media(min-width: 584px) {
+    .mainContainer {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    .btnSAddOrDelet{
+    .btnSAddOrDelet {
         background-color: var(--blue);
         color: #fff;
         width: 30%;
@@ -34,8 +56,8 @@
 }
 
 
-@media(min-width: 1007px){
-    .mainContainer{
+@media(min-width: 1007px) {
+    .mainContainer {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
@@ -45,7 +67,7 @@
         margin-top: 2rem;
     }
 
-    .btnSAddOrDelet{
+    .btnSAddOrDelet {
         width: 30%;
         font-size: 1.5rem;
 
@@ -54,5 +76,20 @@
 
     .btnSAddOrDelet:hover {
         background-color: #234eaa;
+    }
+
+    .btnSeeCart{
+        width: 30%;
+        
+        font-size: 1.3rem;
+        border-radius: 10px;
+        padding: 1rem;
+        transition: 1s;
+
+        /* margin-bottom: -10rem; */
+    }
+
+    .btnSeeCart:hover{
+        background-color: #164abc;
     }
 }
