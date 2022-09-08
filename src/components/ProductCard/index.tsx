@@ -8,7 +8,7 @@ interface ProductCardProps {
     children?: any
 }
 
-export function ProductCard({ title, price, image, quantity,children }: ProductCardProps) {
+export function ProductCard({ title, price, image, quantity, children }: ProductCardProps) {
     return (
         <>
             <div className={styles.container}>
@@ -21,11 +21,13 @@ export function ProductCard({ title, price, image, quantity,children }: ProductC
                         <h4 className={styles.price}>R$ {price}</h4>
                     </div>
 
-                    {/* @ts-ignore */}
-                    {quantity > 1 ? (
-                        <h1 className={styles.quantity}> {quantity} </h1>
-                    ) : ('')}
+                    
                 </div>
+
+                {/* @ts-ignore */}
+                {quantity > 0 ? (
+                    <div className={styles.quantity}> {quantity} </div>
+                ) : ('')}
 
                 {children}
             </div>

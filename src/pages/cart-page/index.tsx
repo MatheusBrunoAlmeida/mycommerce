@@ -11,17 +11,21 @@ import { useCallback, useEffect, useState } from "react";
 export default function CartPage() {
     const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
 
-    const [totalPrice, setTotalPrice] = useState(Number)
+    const [totalPrice, setTotalPrice] = useState(0)
 
-    useEffect(()=>{
-        console.log(cart)
-        total()
-    },[])
+    useEffect(() => {
+        totalCalc()
+    }, [])
 
-    const total = () =>{
+
+    const totalCalc = async () => {
+        let totalsum = 0
+
         cart.map(item => {
-            // setTotalPrice(soma)
+            totalsum = totalsum + (item.product.price * item.quantity)
         })
+
+        setTotalPrice(totalsum)
     }
 
     return (
@@ -39,17 +43,24 @@ export default function CartPage() {
                         price={item.product.price}
                         image={item.product.image}
                         quantity={item.quantity}
-
                     >
                     </ProductCard>
                 ))}
             </div>
 
 
-            <div className={styles.contianerTotal}>
-                <h1>Total</h1>
+            <div className={styles.totalSection}>
+                <div className={styles.contianerTotal}>
+                    <h1>Total</h1>
 
-                <h1 className="">R$ {totalPrice}</h1>
+                    <h1 className="">R$ {totalPrice.toFixed(2)}</h1>
+                </div>
+
+                {totalPrice >= 10 ? (
+                    <div className={styles.fretContainer}>
+                        <h1 className={styles.fretTitle}>Parabéns, sua compra tem frete grátis !</h1>
+                    </div>
+                ) : ('')}
             </div>
 
             <div className={styles.footer}>

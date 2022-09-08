@@ -10,12 +10,7 @@
     overflow-x: scroll;
 }
 
-.contianerTotal{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
+.totalSection{
     flex-wrap: wrap;
 
     padding: 2rem;
@@ -23,6 +18,18 @@
     border-top: 1px solid var(--border-gray);
     border-bottom: 1px solid var(--border-gray);
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contianerTotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
 }
 
 .contianerTotal > h1{
@@ -51,12 +58,42 @@
     padding: 1rem;
 }
 
+.fretContainer{
+    background-color: #c7ffa6;
+    padding: 0.5rem;
+    text-align: center;
+
+    width: 100%;
+
+    border-radius: 20px;
+
+    margin-top: 1.5rem;
+}
+
+.fretTitle{
+    color: #125c00;
+    font-size: 1rem;
+}
+
 @media(min-width: 584px){
     .mainContainer{
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         height: auto;
+    }
+
+    .fretContainer{
+        width: 90%;
+    }
+
+    .fretTitle{
+        font-size: 1.2rem;
+    }
+
+    .contianerTotal{
+        justify-content: center;
+        gap: 2rem;
     }
 }
 
@@ -70,5 +107,32 @@
         gap: 2rem;
 
         margin-top: 2rem;
+    }
+
+    .totalSection{
+        margin-top: 10rem;
+    }
+
+    .fretContainer{
+        width: 70%;
+    }
+
+    .fretTitle{
+        font-size: 1.5rem;
+    }
+
+    .btnFinish{
+        width: 30%;
+        
+        font-size: 1.3rem;
+        border-radius: 10px;
+        padding: 1rem;
+        transition: 1s;
+
+        /* margin-bottom: -10rem; */
+    }
+
+    .btnFinish:hover{
+        background-color: #164abc;
     }
 }

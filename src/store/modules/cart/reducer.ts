@@ -1,7 +1,8 @@
 import { Reducer } from "redux";
-import { ICartState } from "./types";
 
-import produce from 'immer'
+import produce from 'immer';
+
+import { ICartState } from "./types";
 
 const INITAL_STATE: ICartState = {
     items: []
@@ -13,27 +14,25 @@ const cart: Reducer<ICartState> = (state = INITAL_STATE, action) => {
             case 'ADD_PRODUCT_TO_CART': {
                 const { product } = action.playload
 
-                const productInCartIndex = draft.items.findIndex(item => {
-                    item.product.id == product.id
-                })
+                const productInCartIndex = draft.items.findIndex(item =>
+                    item.product.id === product.id
+                )
 
                 if (productInCartIndex >= 0) {
-                    draft.items[productInCartIndex].quantity++;
-                }else {
+                    draft.items[productInCartIndex].quantity++
+                } else {
                     draft.items.push({
                         product,
                         quantity: 1
                     })
                 }
-
-                break
+                break;
             }
             default: {
                 return draft
             }
         }
     })
-
 }
 
 export default cart

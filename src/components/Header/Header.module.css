@@ -47,6 +47,12 @@
     align-items: center;
 }
 
+@media(min-width: 584px) {
+    .icon{
+        width: 1.7rem;
+    }
+}
+
 @media(min-width: 1007px) {
     .container h1 {
         font-size: 2rem;
