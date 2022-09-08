@@ -18,7 +18,7 @@ export function ProductCard({ title, price, image, quantity, children }: Product
                     <div className={styles.infoContainer}>
                         <h1 className={styles.productTitle}>{title}</h1>
 
-                        <h4 className={styles.price}>R$ {price}</h4>
+                        <h4 className={styles.price}>R$ {price.toFixed(2)}</h4>
                     </div>
 
                     
